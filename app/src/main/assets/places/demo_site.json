@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "dataKind": "FICTIONAL_SAMPLE",
+  "notice": "내부 시연용 가상 데이터입니다. 실제 조사한 장소가 아니며 실제 운전 안내에 사용할 수 없습니다. sdkTestCoordinate는 에뮬레이터 SDK 시험 전용 좌표로, 해당 위치의 실제 하차점이나 주차장을 뜻하지 않습니다.",
+  "evidence": [
+    {"id": "ev_access", "sourceType": "FICTIONAL", "sourceTitle": "시연용 가상 근거: 차량 출입 안내", "confirmedFact": "정문으로 방문 차량이 들어올 수 있다고 가정한다."},
+    {"id": "ev_dropoff", "sourceType": "FICTIONAL", "sourceTitle": "시연용 가상 근거: 하차 구역 안내", "confirmedFact": "A와 B에서 잠시 정차해 하차할 수 있다고 가정한다."},
+    {"id": "ev_b_ramp", "sourceType": "FICTIONAL", "sourceTitle": "시연용 가상 근거: 103동 측면 경사로", "confirmedFact": "B에서 103동 1층 출입구까지 계단 없이 경사로로 이어진다고 가정한다."},
+    {"id": "ev_b_open", "sourceType": "FICTIONAL", "sourceTitle": "시연용 가상 근거: 103동 측면 보행로", "confirmedFact": "B에서 103동까지 지붕이 없는 야외 보행로라고 가정한다."},
+    {"id": "ev_p_visitor", "sourceType": "FICTIONAL", "sourceTitle": "시연용 가상 근거: 방문객 주차장 안내", "confirmedFact": "P 주차장은 방문 등록 후 방문객이 이용할 수 있다고 가정한다."},
+    {"id": "ev_p_elevator", "sourceType": "FICTIONAL", "sourceTitle": "시연용 가상 근거: P 주차장 승강기", "confirmedFact": "P 주차장 보행 출구 승강기로 103동 필로티까지 계단 없이 지붕 아래로 이동한다고 가정한다."},
+    {"id": "ev_q_resident", "sourceType": "FICTIONAL", "sourceTitle": "시연용 가상 근거: 입주민 전용 주차장", "confirmedFact": "Q 주차장은 입주민 전용이라 방문객이 이용할 수 없다고 가정한다."},
+    {"id": "ev_q_walk", "sourceType": "FICTIONAL", "sourceTitle": "시연용 가상 근거: Q 주차장 승강기", "confirmedFact": "Q 주차장 승강기로 103동까지 계단 없이 이동한다고 가정한다."},
+    {"id": "ev_r_notice_1", "sourceType": "FICTIONAL", "sourceTitle": "시연용 가상 근거: 상가 주차장 안내문 1", "confirmedFact": "R 주차장을 방문객도 이용할 수 있다고 적힌 안내문을 가정한다."},
+    {"id": "ev_r_notice_2", "sourceType": "FICTIONAL", "sourceTitle": "시연용 가상 근거: 상가 주차장 안내문 2", "confirmedFact": "R 주차장은 상가 이용객 전용이라고 적힌 다른 안내문을 가정한다.", "recheckRequired": true},
+    {"id": "ev_s_visitor", "sourceType": "FICTIONAL", "sourceTitle": "시연용 가상 근거: 후문 방문객 주차장", "confirmedFact": "후문 S 주차장은 방문객이 이용할 수 있고 승강기로 103동까지 이어진다고 가정한다."},
+    {"id": "ev_107_stairs", "sourceType": "FICTIONAL", "sourceTitle": "시연용 가상 근거: 107동 진입 계단", "confirmedFact": "107동은 지상에서 계단을 올라야 출입구에 닿는다고 가정한다."},
+    {"id": "ev_b_to_p", "sourceType": "FICTIONAL", "sourceTitle": "시연용 가상 근거: 단지 내부 차량 동선", "confirmedFact": "B에서 단지 내부 도로로 P 주차장 진입구까지 차량이 이동할 수 있다고 가정한다."},
+    {"id": "ev_105_recheck", "sourceType": "FICTIONAL", "sourceTitle": "시연용 가상 근거: 105동 공사 안내", "confirmedFact": "105동 경사로가 공사 중이라는 지난 안내가 있어 재확인이 필요하다고 가정한다.", "recheckRequired": true}
+  ],
+  "sites": [
+    {
+      "id": "site_demo_a",
+      "name": "가상 A단지",
+      "siteType": "APARTMENT",
+      "description": "시연용 가상 아파트 단지",
+      "destinations": [
+        {"id": "dest_103", "name": "103동", "description": "대표 시연 시나리오"},
+        {"id": "dest_105", "name": "105동", "description": "모든 후보의 계단 조건이 미확인인 사례"},
+        {"id": "dest_107", "name": "107동", "description": "계단 조건을 명확히 충족하지 못하는 사례"}
+      ],
+      "points": [
+        {"id": "gate_main", "role": "VEHICLE_ENTRANCE", "name": "정문 차량 출입구",
+         "vehicleAccess": {"status": "KNOWN", "value": true, "evidenceIds": ["ev_access"]}},
+        {"id": "drop_a", "role": "DROPOFF", "name": "하차 후보 A", "description": "정문 앞 정차 공간",
+         "sdkTestCoordinate": {"latitude": 37.48545, "longitude": 127.03637},
+         "vehicleAccess": {"status": "KNOWN", "value": true, "evidenceIds": ["ev_access"]},
+         "dropoffAllowed": {"status": "KNOWN", "value": true, "evidenceIds": ["ev_dropoff"]}},
+        {"id": "drop_b", "role": "DROPOFF", "name": "하차 후보 B", "description": "103동 측면 회차로",
+         "sdkTestCoordinate": {"latitude": 37.48712, "longitude": 127.03433},
+         "vehicleAccess": {"status": "KNOWN", "value": true, "evidenceIds": ["ev_access"]},
+         "dropoffAllowed": {"status": "KNOWN", "value": true, "evidenceIds": ["ev_dropoff"]}},
+        {"id": "park_p_ent", "role": "PARKING_ENTRANCE", "name": "방문객 주차장 P 진입구", "parkingFacilityId": "fac_p",
+         "sdkTestCoordinate": {"latitude": 37.48820, "longitude": 127.03290},
+         "vehicleAccess": {"status": "KNOWN", "value": true, "evidenceIds": ["ev_access"]}},
+        {"id": "park_p_exit", "role": "PARKING_PEDESTRIAN_EXIT", "name": "P 주차장 승강기 출구", "parkingFacilityId": "fac_p"},
+        {"id": "park_q_ent", "role": "PARKING_ENTRANCE", "name": "입주민 주차장 Q 진입구", "parkingFacilityId": "fac_q",
+         "sdkTestCoordinate": {"latitude": 37.48480, "longitude": 127.03420},
+         "vehicleAccess": {"status": "KNOWN", "value": true, "evidenceIds": ["ev_access"]}},
+        {"id": "park_q_exit", "role": "PARKING_PEDESTRIAN_EXIT", "name": "Q 주차장 승강기 출구", "parkingFacilityId": "fac_q"},
+        {"id": "park_r_ent", "role": "PARKING_ENTRANCE", "name": "상가 주차장 R 진입구", "parkingFacilityId": "fac_r",
+         "sdkTestCoordinate": {"latitude": 37.48600, "longitude": 127.03800},
+         "vehicleAccess": {"status": "KNOWN", "value": true, "evidenceIds": ["ev_access"]}},
+        {"id": "park_r_exit", "role": "PARKING_PEDESTRIAN_EXIT", "name": "R 주차장 보행 출구", "parkingFacilityId": "fac_r"},
+        {"id": "park_s_ent", "role": "PARKING_ENTRANCE", "name": "후문 방문객 주차장 S 진입구", "parkingFacilityId": "fac_s",
+         "sdkTestCoordinate": {"latitude": 37.48900, "longitude": 127.03550},
+         "vehicleAccess": {"status": "KNOWN", "value": true, "evidenceIds": ["ev_access"]}},
+        {"id": "park_s_exit", "role": "PARKING_PEDESTRIAN_EXIT", "name": "S 주차장 승강기 출구", "parkingFacilityId": "fac_s"}
+      ],
+      "parkingFacilities": [
+        {"id": "fac_p", "name": "방문객 주차장 P", "visitorParking": {"status": "KNOWN", "value": true, "evidenceIds": ["ev_p_visitor"]}, "visitorCondition": "방문 등록 후 이용"},
+        {"id": "fac_q", "name": "입주민 주차장 Q", "visitorParking": {"status": "KNOWN", "value": false, "evidenceIds": ["ev_q_resident"]}},
+        {"id": "fac_r", "name": "상가 주차장 R", "visitorParking": {"status": "CONFLICTING", "evidenceIds": ["ev_r_notice_1", "ev_r_notice_2"]}},
+        {"id": "fac_s", "name": "후문 방문객 주차장 S", "visitorParking": {"status": "KNOWN", "value": true, "evidenceIds": ["ev_s_visitor"]}}
+      ],
+      "pedestrianConnections": [
+        {"id": "w_a_103", "fromPointId": "drop_a", "toDestinationId": "dest_103", "guidance": "정문 보행로를 따라 103동 출입구까지 이동합니다."},
+        {"id": "w_b_103", "fromPointId": "drop_b", "toDestinationId": "dest_103", "guidance": "측면 경사로로 103동 1층 출입구까지 이동합니다.",
+         "stepFree": {"status": "KNOWN", "value": true, "evidenceIds": ["ev_b_ramp"]},
+         "covered": {"status": "KNOWN", "value": false, "evidenceIds": ["ev_b_open"]}},
+        {"id": "w_p_103", "fromPointId": "park_p_exit", "toDestinationId": "dest_103", "guidance": "P 주차장 승강기로 지상에 올라 103동 필로티 출입구로 이동합니다.",
+         "stepFree": {"status": "KNOWN", "value": true, "evidenceIds": ["ev_p_elevator"]},
+         "covered": {"status": "KNOWN", "value": true, "evidenceIds": ["ev_p_elevator"]}},
+        {"id": "w_q_103", "fromPointId": "park_q_exit", "toDestinationId": "dest_103", "guidance": "Q 주차장 승강기로 103동 지하 출입구까지 이동합니다.",
+         "stepFree": {"status": "KNOWN", "value": true, "evidenceIds": ["ev_q_walk"]}},
+        {"id": "w_r_103", "fromPointId": "park_r_exit", "toDestinationId": "dest_103", "guidance": "상가 앞 보행로를 지나 103동으로 이동합니다."},
+        {"id": "w_s_103", "fromPointId": "park_s_exit", "toDestinationId": "dest_103", "guidance": "S 주차장 승강기로 후문 광장에 올라 103동으로 이동합니다.",
+         "stepFree": {"status": "KNOWN", "value": true, "evidenceIds": ["ev_s_visitor"]}},
+        {"id": "w_a_105", "fromPointId": "drop_a", "toDestinationId": "dest_105", "guidance": "정문 보행로를 따라 105동으로 이동합니다."},
+        {"id": "w_b_105", "fromPointId": "drop_b", "toDestinationId": "dest_105", "guidance": "측면 경사로를 지나 105동으로 이동합니다.",
+         "stepFree": {"status": "RECHECK_REQUIRED", "evidenceIds": ["ev_105_recheck"]}},
+        {"id": "w_p_105", "fromPointId": "park_p_exit", "toDestinationId": "dest_105", "guidance": "P 주차장 승강기로 올라 105동으로 이동합니다."},
+        {"id": "w_a_107", "fromPointId": "drop_a", "toDestinationId": "dest_107", "guidance": "정문에서 107동 계단 출입구로 이동합니다.",
+         "stepFree": {"status": "KNOWN", "value": false, "evidenceIds": ["ev_107_stairs"]}},
+        {"id": "w_b_107", "fromPointId": "drop_b", "toDestinationId": "dest_107", "guidance": "측면 보행로에서 107동 계단 출입구로 이동합니다.",
+         "stepFree": {"status": "KNOWN", "value": false, "evidenceIds": ["ev_107_stairs"]}},
+        {"id": "w_p_107", "fromPointId": "park_p_exit", "toDestinationId": "dest_107", "guidance": "P 주차장 승강기로 올라 107동 계단 출입구로 이동합니다.",
+         "stepFree": {"status": "KNOWN", "value": false, "evidenceIds": ["ev_107_stairs"]}}
+      ],
+      "vehicleConnections": [
+        {"id": "v_b_p", "fromPointId": "drop_b", "toPointId": "park_p_ent", "allowed": {"status": "KNOWN", "value": true, "evidenceIds": ["ev_b_to_p"]}},
+        {"id": "v_a_p", "fromPointId": "drop_a", "toPointId": "park_p_ent", "allowed": {"status": "UNKNOWN"}},
+        {"id": "v_b_q", "fromPointId": "drop_b", "toPointId": "park_q_ent", "allowed": {"status": "KNOWN", "value": true, "evidenceIds": ["ev_b_to_p"]}}
+      ]
+    }
+  ]
+}

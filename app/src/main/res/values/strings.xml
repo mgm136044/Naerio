@@ -1,0 +1,4 @@
+<resources>
+    <!-- 브랜드: Naerio(내리오). 내리다의 '내리-'에 Pleos·Gleo처럼 모음으로 끝나는 조어. 한국어로 읽으면 '내리오(내리시오)'. -->
+    <string name="app_name">Naerio</string>
+</resources>

@@ -1,0 +1,37 @@
+.gradle/
+.kotlin/
+build/
+app/build/
+local.properties
+.idea/
+*.iml
+.DS_Store
+*.jks
+*.keystore
+
+# insane-design 원본 수집물(pleos.ai의 CSS/HTML/폰트, 중간 산출물)은 저장소에 넣지 않는다
+insane-design/pleos/css/
+insane-design/pleos/index.html
+insane-design/pleos/*.woff2
+insane-design/pleos/phase1/
+insane-design/pleos/screenshots/section-*.png
+
+# 서명·비밀 값과 빌드 산출물(apk/ 폴더의 제출용 APK만 허용)
+*.apk
+!apk/*.apk
+*.aab
+*.p12
+*.pem
+*.key
+keystore.properties
+signing.properties
+.env
+.env.*
+captures/
+.cxx/
+.externalNativeBuild/
+
+# 외부 저작물(pleos.ai 화면, Pleos 문서 이미지)은 공개 저장소에 넣지 않는다
+insane-design/pleos/screenshots/
+insane-design/pleos/guide/*
+!insane-design/pleos/guide/connect-emulator-settings.png
