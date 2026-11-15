@@ -78,3 +78,16 @@ insane-design/pleos/                        Pleos 디자인 시스템 분석(des
 
 Pleos Connect 디자인 가이드(Asta Sans, basic grayscale, Pleos 팔레트)를 기준으로 했습니다.
 경로는 실선(차)과 점선(도보) 도식으로 보여 주고, 설명은 첫 실행 안내로 옮겼습니다.
+
+## 오픈소스와 외부 구성 요소
+
+| 구성 요소 | 용도 | 라이선스 |
+|---|---|---|
+| AndroidX Core, Activity Compose, Lifecycle | 앱 기본 구성 | Apache License 2.0 |
+| Jetpack Compose(UI, Material3, Material Icons Extended) | 화면, 아이콘 | Apache License 2.0 |
+| Kotlin 표준 라이브러리, kotlinx.coroutines, kotlinx.serialization | 언어, 비동기, JSON 파싱 | Apache License 2.0 |
+| JUnit 4 (테스트 전용, APK 미포함) | 단위 테스트 | Eclipse Public License 1.0 |
+| Pleos Playground SDK(Vehicle, NaviHelper) | 차량 연동, 내비 경로 | Pleos Playground 이용 약관 |
+
+- 화면 서체는 Pleos Connect 기기에 내장된 시스템 서체(Asta Sans)를 그대로 사용하며, 서체 파일을 앱이나 저장소에 포함하지 않습니다.
+- 앱 아이콘과 화면 도식은 이 프로젝트에서 직접 만들었습니다.
